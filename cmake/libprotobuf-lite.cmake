@@ -28,6 +28,9 @@ add_library(libprotobuf-lite ${protobuf_SHARED_OR_STATIC}
   ${libprotobuf_lite_files})
 target_link_libraries(libprotobuf-lite ${CMAKE_THREAD_LIBS_INIT})
 target_include_directories(libprotobuf-lite PUBLIC ${protobuf_source_dir}/src)
+
+set_property(TARGET libprotobuf-lite PROPERTY POSITION_INDEPENDENT_CODE ON)
+
 if(MSVC AND protobuf_BUILD_SHARED_LIBS)
   target_compile_definitions(libprotobuf-lite
     PUBLIC  PROTOBUF_USE_DLLS

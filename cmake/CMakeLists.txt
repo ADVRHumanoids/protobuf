@@ -8,6 +8,8 @@ endif()
 # CMake policies
 cmake_policy(SET CMP0022 NEW)
 
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
 # Project
 project(protobuf C CXX)
 
